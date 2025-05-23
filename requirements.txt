@@ -1,0 +1,7 @@
+streamlit
+pandas
+openpyxl
+pydrive2
+gspread
+gspread_dataframe
+google-auth
