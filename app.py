@@ -196,7 +196,7 @@ if pagina == "Cadastro/Editar Viagem":
             manobras = st.number_input("Manobras (L)", min_value=0.0, format="%.0f", value=parse_float(get_registro("manobras", 0)))
         with col6:
             mca = st.number_input("MCA (L)", min_value=0.0, format="%.0f", value=parse_float(get_registro("mca", 0)))
-            saldo_diesel_atual = st.number_input("Saldo Diesel Atual (L)", min_value=0.0, format="%.0f", value=parse_float(get_registro("saldo_diesel_atual", 0)))
+            saldo_diesel_atual = st.number_input("Saldo Diesel Atual (L)", min_value=0.0, format="%.0f", value=float(registro["saldo_diesel_atual"]) if registro["saldo_diesel_atual"] not in ["", None, "nan"] else 0.0)
             abastecimento = st.number_input("Abastecimento (L)", min_value=0.0, format="%.0f", value=parse_float(get_registro("abastecimento", 0)))
             transbordo = st.selectbox("Transbordo", options=["", "Recebeu", "Passou"], index=["", "Recebeu", "Passou"].index(get_registro("transbordo", "")) if get_registro("transbordo", "") in ["", "Recebeu", "Passou"] else 0)
             qtd_transbordo = st.number_input("Qtd. Transbordo (L)", min_value=0.0, format="%.0f", value=parse_float(get_registro("qtd_transbordo", 0)))
